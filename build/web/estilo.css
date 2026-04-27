@@ -1,0 +1,453 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+    color: white;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+.card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 25px;
+    padding: 25px;
+
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212,175,55,0.2);
+
+    box-shadow:
+        0 0 20px rgba(212,175,55,0.1),
+        0 0 50px rgba(0,0,0,0.6);
+
+    animation: scaleIn 0.6s ease;
+}
+
+
+h1, h2, h3 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+
+p {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+
+.input-group {
+    position: relative;
+    margin: 15px 0;
+}
+
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d4af37;
+}
+
+
+.input-group input,
+select {
+    width: 100%;
+    padding: 14px 14px 14px 40px;
+
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
+
+
+.input-group input:focus,
+select:focus {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212,175,55,0.5);
+    outline: none;
+}
+
+button, input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    border-radius: 30px;
+    border: none;
+
+    background: linear-gradient(135deg, #d4af37, #b8962e);
+
+    color: black;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+button:hover, input[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(212,175,55,0.6);
+    animation: pulse 0.6s;
+}
+
+.servicio-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.3s;
+}
+
+.servicio-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 20px rgba(212,175,55,0.2);
+}
+
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #d4af37;
+    text-decoration: none;
+}
+
+a:hover {
+    text-shadow: 0 0 10px #d4af37;
+}
+
+
+hr {
+    border: none;
+    height: 1px;
+    margin: 20px 0;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1.05); }
+}
+
+
+@media (max-width: 500px) {
+    .app {
+        padding: 15px;
+    }
+}
+
+
+select {
+    background-color: rgba(255,255,255,0.05);
+    color: white;
+}
+
+select option {
+    color: black; 
+    background: white; 
+}
+
+
+.barberos-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.barberos-botones button {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.05);
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.barberos-botones button:hover {
+    background: rgba(212,175,55,0.2);
+}
+.barberos-botones button.activo {
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+}
+.alerta-exito {
+    animation: slideFade 0.8s ease, glow 2s infinite alternate, fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+:root {
+    --oro: #c5a059;      
+    --oro-brillante: #e5c98d; 
+    --negro-fondo: #0a0a0a;
+    --negro-card: #141414;
+    --blanco: #ffffff;
+    --gris-suave: #a0a0a0;
+}
+
+body {
+    background-color: var(--negro-fondo);
+    color: var(--blanco);
+    font-family: 'Poppins', sans-serif; /
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+form {
+    background-color: var(--negro-card);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(197, 160, 89, 0.3); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h3 {
+    color: var(--oro);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--oro);
+    padding-bottom: 10px;
+}
+
+label {
+    display: block;
+    color: var(--gris-suave);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+
+input[type="date"] {
+    background: #1f1f1f;
+    border: 1px solid #333;
+    color: var(--blanco);
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    outline: none;
+}
+
+input[type="date"]:focus {
+    border-color: var(--oro);
+}
+
+
+.grid-horas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-hora {
+    background: transparent;
+    border: 1px solid #333;
+    color: var(--blanco);
+    padding: 12px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    font-weight: 500;
+}
+
+.btn-hora:hover {
+    border-color: var(--oro);
+    background: rgba(197, 160, 89, 0.1);
+}
+
+
+.btn-hora.seleccionado {
+    background-color: var(--oro);
+    color: var(--negro-fondo);
+    border-color: var(--oro-brillante);
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+
+.btn-confirmar {
+    background-color: var(--blanco);
+    color: var(--negro-fondo);
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-confirmar:hover {
+    background-color: var(--oro);
+    color: var(--blanco);
+    letter-spacing: 1px;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contenedor-grid {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+
+
+:root {
+    --oro: #c5a059;
+    --negro-fondo: #0a0a0a;
+    --negro-card: #141414;
+    --blanco: #ffffff;
+    --gris-texto: #a0a0a0;
+}
+
+body {
+    background-color: var(--negro-fondo);
+    color: var(--blanco);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.app {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+
+.confirmacion-card {
+    background-color: var(--negro-card);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+.confirmacion-card h2 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--oro);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.detalles-reserva {
+    text-align: left;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.detalles-reserva strong {
+    color: var(--gris-texto);
+    font-weight: 400;
+}
+
+.detalles-reserva span {
+    color: var(--blanco);
+    float: right;
+}
+
+.detalles-reserva .precio-total {
+    color: var(--oro);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--oro), transparent);
+    margin: 20px 0;
+}
+
+
+.btn-volver {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: var(--oro);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-volver:hover {
+    letter-spacing: 2px;
+    color: var(--blanco);
+}
